@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta name="sharecontent" data-msg-img="" data-msg-title="" data-msg-content="" data-msg-callback=""
+          data-line-img="" data-line-title="" data-line-callback="">
+    <title>30秒 过个招吧！</title>
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="js/db.js" type="text/javascript"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        $.ajax({
+            url: "http://event.anruichina.com/wechat/token",
+            dataType: 'jsonp',
+            data: {url: window.location.href},
+            jsonp: 'jsonpcallback',
+            success: function (data) {
+                try {
+                    var wxConfig = eval(data);
+                    wx.config(wxConfig);
+                } catch (e) {
+                    alert(e.message);
+                }
+            }
+        });
+    </script>
+    <script src="js/wxshare-v2.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+            var version = parseFloat(RegExp.$1);
+            if (version > 2.3) {
+                var phoneScale = parseInt(window.screen.width) / 640;
+                document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        //微信去掉下方刷新栏
+        if (navigator.userAgent.indexOf('MicroMessenger') >= 0) {
+            document.addEventListener('WeixinJSBridgeReady', function () {
+                //WeixinJSBridge.call('hideToolbar');
+            });
+        }
+    </script>
+    <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/Initialization.css" type="text/css" rel="stylesheet">
+    <link href="css/swiper.min.css" type="text/css" rel="stylesheet">
+    <link href="css/loadnew.css" type="text/css" rel="stylesheet">
+    <link href="css/load.css" type="text/css" rel="stylesheet">
+    <link href="css/css3.css" type="text/css" rel="stylesheet">
+    <link href="css/css3ppt.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animations.css" type="text/css">
+    <link rel="stylesheet" href="css/animation.css" type="text/css">
+    <link rel="stylesheet" href="css/l-css3.css" type="text/css">
+</head>
+<body>
+<div class="load">
+    <ul>
+        <li class="top"></li>
+        <li class="rigth"></li>
+        <li class="bottom"></li>
+        <li class="left"></li>
+    </ul>
+</div>
+<div class="container">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide ys1 stop-swiping" style="background:#fff">
+                <img src="imgs/start_bg_shan.png" alt="" style="position:absolute; left:0; top:0px;" class="bg">
+                <!--<img src="imgs/start_brand_yun1.png" alt="" style="position:absolute; left:0; top:0px; z-index: 99" class="roll">-->
+                <img src="imgs/start_logo.png" alt="" style="position:absolute; left:0; top:0px;" class="bounceinB">
+                <img src="imgs/start_brand_yun.png" alt="" style="position:absolute; left:0; top:0px;" class="double-bounce1">
+                <img src="imgs/start_brand_bar.png" alt="" style="position:absolute; left:0; top:0px;" class="">
+                <img src="imgs/start_superman.png" alt="" style="position:absolute; left:130px; top:480px;" class="l-arrow-top-bottom">
+                <div class="loadpress">
+                    <div class="loadpressing"></div>
+                </div>
+                <div class="box">
+                    <img src="imgs/start_all_mask.png" alt="" style="position: absolute; left:0; top:0;" class="bg">
+                    <img class="i1" src="imgs/bishi_box.png" alt="">
+                    <!--<img class="i1" src="imgs/bishi_word.png" alt="">-->
+                    <div class="bishi_word">
+                        <p>
+                            “云”海茫茫、硝烟弥漫。 <br>
+                            关于“云”，你已练就几成功力？ <br>
+                            Microsoft Azure 是否是你的“真命云”？ <br>
+                            <span>过大招，拿大奖</span>  <br>
+                            行家一出手，就知有没有。 <br>
+                        </p>
+                    </div>
+                    <img class="i2" src="imgs/bishi_rule1.png" alt="">
+                    <div class="ys2btn swiper-button-next">
+                        <img src="imgs/bishi_btn1.png" alt="" class="a-bounceinT">
+                    </div>
+                    <!--<div class="close"></div>-->
+                </div>
+                <!--<div class="swiper-button-prev" ></div>-->
+                <!--<div class="swiper-button-next"></div>-->
+            </div>
+            <!--stop-swiping 加到ys2之后可以禁止滑屏事件-->
+            <div class="swiper-slide ys2 stop-swiping" style="background:#0278d0;">
+                <!--<img src="imgs/wd_bg.png" alt="" style="position: absolute;top: 0; left:0;">-->
+                <div>
+                    <div class="d1"></div>
+                    <div class="d2">
+                        <div class="problem-List">
+                            <div class="question-title">
+                                <div class="order">01</div>
+                                <div class="title-content" id="ques">功力十成，一代宗师，功力十成，<br/>一代宗师，功力十成，一代宗师，</div>
+                            </div>
+                            <div class="question-result">
+                                <input type="radio" name="question" id="site-1" value="A">
+                                <label for="site-1" class="first">
+                                    <span>A</span>
+                                    <div class="choose">
+                                        <p id="ques-ans1">隐私保护</p>
+                                        <div class="decorate"><span></span></div>
+                                    </div>
+                                </label>
+                                <input type="radio" name="question" id="site-2" value="B">
+                                <label for="site-2" class="second">
+                                    <span>B</span>
+                                    <div class="choose">
+                                        <p id="ques-ans2">高可用性</p>
+                                        <div class="decorate"><span></span></div>
+                                    </div>
+                                </label>
+                                <input type="radio" name="question" id="site-3" value="C">
+                                <label for="site-3" class="three">
+                                    <span>C</span>
+                                    <div class="choose">
+                                        <p id="ques-ans3">多层防护</p>
+                                        <div class="decorate"><span></span></div>
+                                    </div>
+                                </label>
+                                <input type="radio" name="question" id="site-4" value="D">
+                                <label for="site-4" class="four">
+                                    <span>D</span>
+                                    <div class="choose">
+                                        <p id="ques-ans4">智能化</p>
+                                        <div class="decorate"><span></span></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <a class="gonglue">攻略</a>
+                        <div id="gonglue1">
+                            <img id="gonglue_1" src="imgs/Azure_final_0.jpg" alt="">
+                        </div>
+                        <a class="next">下一题</a>
+                    </div>
+                    <div class="d3"></div>
+                    <!--<img class="ball" src="imgs/ball_bg.png" alt="">-->
+                    <ul class="circle_list">
+                        <li class="active"><span class="circle"></span><span class="line"></span></li>
+                        <li><span class="circle"></span><span class="line"></span></li>
+                        <li><span class="circle"></span><span class="line"></span></li>
+                        <li><span class="circle"></span><span class="line"></span></li>
+                        <li><span class="circle"></span></li>
+                    </ul>
+                    <div class="alertBg">
+                        <div class="alert_bg"></div>
+                        <div class="content">
+                            <div class="star_num"><img src="imgs/alertInfo_5.png"/></div>
+                            <form action="">
+                                姓名：<input type="text" id="name"><br>
+                                电话：<input type="number" id="phone"><br>
+                                邮箱：<input type="email" id="email"><br>
+                            </form>
+                            <div class="star_btn">
+                                <span><a class="" id="alertInfoNext" href="#">立刻抽奖</a></span>
+                            </div>
+                            <div class="close"></div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            <div class="swiper-slide ys3 stop-swiping"  >
+                <div id="lotteryContent">
+                    <canvas id="lotteryCvs" width="640" height="640"></canvas>
+                    <a id="btnLottery"><img src="imgs/cj_zz.png" alt=""></a>
+                    <div class="rule">
+                        <h4>活动规则</h4>
+                        <p>中奖秘诀：答对5道题的用户，获得机率更高。</p>
+                        <p>活动时间：<i>即日起至2016年3月30日18:00结束</i>。</p>
+                        <p>活动结束后统一安排礼品递送。</p>
+                    </div>
+                </div>
+                <!--奖品T恤-->
+                <div class="rgba">
+                    <div class="content a-swing">
+                        <img src="imgs/zj_bj_03.png" alt="">
+                        <p>获得 T 恤衫<i>&nbsp;1&nbsp;</i>件</p>
+                        <img class="jp" src="imgs/zj_jp_1.png" alt="">
+                    </div>
+                    <a class="challenge" href="">邀请好友挑战</a>
+                </div>
+                <!--未中奖-->
+                <div class="rgba1">
+                    <div class="content a-swing">
+                        <img src="imgs/wzj_bj_1.png" alt="" id="unzhongjiang">
+                        <a class="challenge" href="">邀请好友挑战</a>
+                    </div>
+                </div>
+                <!--奖品书-->
+                <div class="rgba_book" style="display:none;">
+                    <div class="content a-swing">
+                        <img src="imgs/zj_bj_03.png" alt="">
+                        <p>Microsoft Azure 技术秘籍<i>&nbsp;1&nbsp;</i>本</p>
+                        <img class="jp" src="imgs/zj_jp_book.png" alt="">
+                    </div>
+                    <a class="challenge" href="">邀请好友挑战</a>
+                </div>
+                <!--中奖一元页面-->
+                <div class="rgba_one" style="display: none;">
+                    <div class="content a-swing">
+                        <img src="imgs/zj_bj_03.png" alt="">
+                        <p>Microsoft Azure1元试用账号<i>&nbsp;1&nbsp;</i>个</p>
+                        <img class="jp" src="imgs/zj_jp_one.png" alt="">
+                    </div>
+                    <a class="challenge" href="">邀请好友挑战</a>
+                </div>
+                <!--分享页面-->
+                <div class="share">
+                    <img src="imgs/sp_share.png" alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/swiper.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplayDisableOnInteraction: false,
+        direction: 'vertical',
+        longSwipesRatio: 0.3,
+        simulateTouch: false,
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+        freeModeMomentumBounceRatio: 0,
+        noSwipingClass: 'stop-swiping',
+        onSlideChangeEnd: function (swiper) {
+            if (swiper.activeIndex == 0) {
+                $(".ys1 img").show();
+//            $(".swiper-button-next").show();
+//            $(".tou").show();
+            } else {
+                $(".ys1 .bg").siblings().hide();
+            }
+            if (swiper.activeIndex == 1) {
+                $(".ys2 img").show();
+            } else {
+                $(".ys2 .bg").siblings().hide();
+            }
+            if (swiper.activeIndex == 2) {
+                $(".ys3 img").show();
+            } else {
+                $(".ys3 .bg").siblings().hide();
+            }
+            if (swiper.activeIndex == 3) {
+                $(".ys4 img").show();
+            } else {
+                $(".ys4 .bj").siblings().hide();
+            }
+            if (swiper.activeIndex == 4) {
+                $(".ys5 img").show();
+            } else {
+                $(".ys5 .bg").siblings().hide();
+            }
+            if (swiper.activeIndex == 5) {
+                $(".ys6 img").show();
+                $(".hreflink").show();
+            } else {
+                $(".ys6 .bg").siblings().hide();
+            }
+        }
+//    loop : true,
+    })
+</script>
+<script type="text/javascript">
+    $(".loadpressing").css('width',"100%");
+    $(function () {
+        $(".loadpressing").on('transitionend', function () {
+//            mySwiper.slideTo(1)
+            $('.box').show();
+        })
+        $(".load").hide();
+        $(".swiper-container img:not(.bg)").hide();
+        $(".ys1 img").show();
+    });
+
+//    $(".txxx").click(function(){
+//        $(".info").fadeIn();
+//        $(".alertBg").fadeOut();
+//    })
+    function left() {
+        //return;
+        $(".roll").animate({
+            left: "-640px"
+        }, 5000, 'linear', function () {
+            $(".roll").css({
+                "left": 0
+            })
+            setTimeout("left()", 0)
+        });
+    }
+    //    left();
+    $('.alertBg .content .close').click(function(){
+        $('.alertBg').hide();
+        $('.alert_bg').hide();
+    });
+    $('.challenge').click(function(){
+        event.preventDefault();
+        $(".rgba").hide();
+        $('.rgba1').hide();
+        $('.rgba_one').hide();
+        $('.rgba_book').hide();
+        $('.share').show();
+    });
+    $('.ys1 .box .close').click(function(){
+        $('.ys1 .box').hide();
+    })
+
+        var userQueses = QuesDB.getEveryDBQues();
+        console.log(userQueses)
+        var userAns = [];
+        var page = 0;
+        updateQues(userQueses[page]);
+        $(".next").click(function () {
+            if(!userAns[page]){
+                alert("请选择答案");
+                return false;
+            }
+//            $(".question-title .order").html(page+1);
+            $(".ys2 input[type=radio]").attr("checked",false);
+            page++;
+//            攻略图
+            var imagePage = page > 4 ? 0 : page;
+            $('#gonglue_1').attr("src","imgs/Azure_final_"+imagePage+".jpg");
+            if(page < 5){
+                $(".question-title .order").html("0"+(page+1));
+            }else{
+                $(".question-title .order").html("0"+(page));
+            }
+            $(".circle_list li:eq("+page+")").addClass('active');
+            if(page == 4){
+                $(".next").html("提交");
+            }
+            if(page>4){
+                page = 4;
+                var rNum = getRightNum();
+                if(rNum <= 0){
+                    $('.alertBg form').hide();
+                    $("#alertInfoNext").html("重新作答").css('top','-220px');
+                }else{
+                    $('.alertBg form').show().css('margin-top','40px');
+                    $("#alertInfoNext").html("立刻抽奖").css('top','30px');
+                }
+                alertRightImg(rNum);
+                $(".alertBg").fadeIn();
+                $('.alertBg .alert_bg').show();
+            }else{
+                updateQues(userQueses[page]);
+            }
+        });
+        $(".ys2 input[type=radio]").change(function(){
+            var userselect = $(this).val();
+            userAns[page] = userselect
+        })
+        //更新页面问题
+        function updateQues(ques){
+            $("#ques").html(ques["title"]);
+            $("#ques-ans1").html(ques["option"][0])
+            $("#ques-ans2").html(ques["option"][1])
+            $("#ques-ans3").html(ques["option"][2])
+            $("#ques-ans4").html(ques["option"][3])
+        }
+        function getRightNum(){
+            var rightNum = 0;
+            for(var i = 0; i<userQueses.length; i++){
+                if(userAns[i] == userQueses[i]["ans"]){
+                    rightNum++;
+                }
+            }
+            return rightNum;
+        }
+        function alertRightImg(rightNum){
+            $('.star_num img').attr("src","imgs/alertInfo_"+rightNum+".png");
+        }
+        //能否点击转盘
+        var canuse = false;
+        $("#alertInfoNext").click(function(){
+            $(".circle_list li").removeClass('active');
+            $(".circle_list li:eq(0)").addClass('active');
+            if(getRightNum() == 0){
+                //隐藏弹出框
+                $('.alertBg').hide();
+                $(".next").html("下一题");
+                userAns = [];
+                page = 0;
+                $(".question-title .order").html("01");
+                updateQues(userQueses[0]);
+                page = 1;
+            }else{
+                if(!checkName($("#name").val())){
+                    alert("请填写正确的姓名");
+                    return false;
+                }
+                if(!checkPhone($("#phone").val())){
+                    alert("请填写正确的电话号码");
+                    return false;
+                }
+                if(!checkEmail($("#email").val())){
+                    alert("请填写正确的email");
+                    return false;
+                }
+                canuse= true;
+                mySwiper.slideTo(3);
+            }
+        })
+
+        $('.gonglue').click(function(){
+            //page 为当前题数 攻略图片命名按照当前题数命名
+//            $("#gonglue_1").attr("src",'')
+            $('#gonglue1').show();
+            $(".circle_list").hide();
+
+        });
+        $('#gonglue_1').click(function(){
+            $(".circle_list").show();
+            $('#gonglue1').hide();
+        })
+    function checkName(name){
+        var trimName = $.trim(name);
+        if(trimName == "" || !trimName){
+            return false;
+        }
+        return true;
+    }
+
+    function checkEmail(email){
+        var myreg = /^\w+((-\w+)|(\.\w+))*\@/;
+        if(!myreg.test(email)){
+            return false;
+        }
+        return true
+    }
+    function checkPhone(phone){
+        var reg = /[0-9]+/;
+        if(!reg.test(phone)){
+            return false;
+        }
+        return true;
+    }
+    var JANGPIN;
+    function getTargetDu(){
+        var rightNum = getRightNum();
+        var randNum = Math.random()*100;
+        if(rightNum*10<randNum){
+            JANGPIN = null;
+            return Math.random()*20+120;//280
+        }else{
+            //如果中奖
+            var randNumjiang = Math.random()*100;
+            if(randNumjiang<=33){
+                JANGPIN = "MJ";
+                return Math.random()*20+210;//120
+            }else if(randNumjiang<66 && randNumjiang>33){
+                JANGPIN = "T"
+                return Math.random()*20+30;//180
+            }else{
+                JANGPIN = "YB"
+                return Math.random()*20+90; //240;
+            }
+        }
+    }
+    //奖励函数 转盘最后结束时调用  JANGPIN 为奖励
+    function jiangli(){
+        console.log(JANGPIN);
+        if( JANGPIN  == "MJ" ){
+            $('.rgba_book').show();
+        }else if( JANGPIN == "T" ) {
+            $('.rgba').show();
+        }else if( JANGPIN == "YB" ){
+            $('.rgba_one').show();
+        }else{
+            $('.rgba1').show();
+        }
+
+        var _title = "";
+        var rightNum = getRightNum();
+        if(rightNum == 5){
+            _title = "我对 Azure 已了若指掌，登峰造极。不服来战!"
+        }else if(rightNum == 4){
+            _title = "我对 Azure 已到了炉火纯青的地步。不服来战!"
+        }else if(rightNum == 3){
+            _title = "我在 Azure 界颇有名望，欢迎切磋。不服来战!"
+        }else if(rightNum == 2){
+            _title = "我生来骨骼精奇，练就 Azure 大法志在必得。不服来战!"
+        }else if(rightNum == 1){
+            _title = "对于 Azure 我如若勤加修炼，日后必成大器！不服来战!"
+        }else {
+            _title = "你的选“云”功力如何？检验的时刻到了！更有神秘大礼!"
+        }
+        shareData.title = _title;
+    }
+    zhuanpan(jiangli);
+
+    function zhuanpan(callback){
+        var canvas = document.getElementById("lotteryCvs");
+        var context = canvas.getContext("2d");
+        const WIDTH = canvas.width;
+        const HEIGHT = canvas.height;
+        context.translate(WIDTH/2,HEIGHT/2+45);
+        var as = new Image();
+        as.src = "imgs/cj_zp2.png";
+        as.width = 419;
+        as.height = 419;
+        var pin = new Image();
+//        pin.src = "imgs/cj_zz.png";
+        pin.width = 120;
+        pin.height = 145;
+        var flag = false;
+        var du = 0,cha = 0;
+        var startTime;//定义开始时间
+        var num;//答对题数
+        var i = Math.random()*100;//中奖概率
+        var targetDu = 0;
+        context.rotate(0);
+        function btnLottery(){
+            du = 0;
+            targetDu = getTargetDu();
+            flag = true;
+//            startTime = new Date().getTime();
+            $(this).attr("disabled","disabled");
+        }
+
+        $("#btnLottery").click(function(){
+            if(canuse){
+                context.rotate((-Math.ceil(targetDu))*Math.PI/180);
+                btnLottery()
+                canuse = false;
+            }
+        });
+        var t =   setInterval(function(){
+            context.drawImage(as,-as.width/2,-as.height/2);
+            context.drawImage(pin,-pin.width/2-5,-pin.height/2-10);
+            cha = (targetDu+360*3 - du)/30;
+            //最后时速度
+            if(cha <= 20 && cha > 0 && du <=targetDu+360*2){
+                cha = 20
+            }else if(du >targetDu+180+360*2 && du < targetDu+360*3){
+                cha = cha > 10 ? cha-- : 9;
+            }else if(du >= targetDu+360*3){
+                cha = 0;
+        }
+            var speed = 0;
+            if(flag){
+                //匀速 - 每次累加值相同
+                if(du+cha > targetDu+360*3){
+                    speed = targetDu+360*3 - du;
+                    du = targetDu+360*3;
+                }else if(cha == 0){
+                    speed = 0;
+                }else{
+                    du = du + cha;
+                    speed = cha
+                }
+
+            }
+            if(cha == 0 && flag){
+                flag = false;
+                $("#btnLottery").removeAttr("disabled");
+                callback && callback();
+            }
+            context.rotate(speed*Math.PI/180);
+            context.drawImage(as, -as.width / 2, -as.height / 2);
+        }, 100);
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

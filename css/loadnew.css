@@ -1,0 +1,61 @@
+.loadpress{
+    position: relative;
+    background: url("../imgs/bgload.png") no-repeat 0 0;
+    background-size:100% 100%;
+    padding:12px 15px 12px 13px;
+    overflow: hidden;
+}
+
+.loadpressing{
+    position: relative;
+    background-color: #6DA807;
+    border: 1px solid #6DA807;
+    border-radius: 10px;
+    box-shadow: 1vw 3vh 10vh rgba(109, 168, 7, 0.8);
+    background-size: 3em 3em;
+    background-image: linear-gradient(-45deg, transparent 0em, transparent 0.8em, #96D923 0.9em, #96D923 2.1em, transparent 2.1em, transparent 2.9em, #96D923 3.1em);
+    -webkit-animation: warning-animation 750ms infinite linear;
+    -moz-animation: warning-animation 750ms infinite linear;
+    animation: warning-animation 750ms infinite linear;
+}
+
+.loadpress {
+    border-radius: 45px;
+    top:90%;
+    width:80%;
+    margin:0 auto;
+}
+
+.loadpress .loadpressing{
+    height:35px;
+    width:0%;
+    transition: width 4s;
+    -moz-transition: width 4s;	/* Firefox 4 */
+    -webkit-transition: width 4s;	/* Safari 和 Chrome */
+    -o-transition: width 4s;
+}
+
+@-webkit-keyframes warning-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 3em 0;
+    }
+}
+@-moz-keyframes warning-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 3em 0;
+    }
+}
+@keyframes warning-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 3em 0;
+    }
+}
